@@ -7,4 +7,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-= require yui/yui/yui-min.js
