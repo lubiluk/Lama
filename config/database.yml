@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: postgresql
-  host: punjabi.mpagencja.pl
+  host: localhost
   database: lama
   username: postgres
   password: lama
