@@ -1,4 +1,4 @@
-Server::Application.routes.draw do
+Lama::Application.routes.draw do
   resources :point_marks
 
   get "home/index"
