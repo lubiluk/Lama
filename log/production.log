@@ -1,0 +1,224 @@
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-29 23:09:20 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-29 23:16:28 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/rails/info/properties" for 91.150.187.3 at 2011-12-29 23:16:32 +0100
+
+ActionController::RoutingError (No route matches [GET] "/rails/info/properties"):
+  
+
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-29 23:16:47 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-29 23:16:55 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/rails/info/properties" for 91.150.187.3 at 2011-12-29 23:16:58 +0100
+
+ActionController::RoutingError (No route matches [GET] "/rails/info/properties"):
+  
+
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-29 23:17:06 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-29 23:19:35 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/rails/info/properties" for 91.150.187.3 at 2011-12-29 23:20:07 +0100
+
+ActionController::RoutingError (No route matches [GET] "/rails/info/properties"):
+  
+
+
+
+Started GET "/rails/info/properties" for 91.150.187.3 at 2011-12-29 23:20:12 +0100
+
+ActionController::RoutingError (No route matches [GET] "/rails/info/properties"):
+  
+
+
+
+Started GET "/rails/info/properties" for 91.150.187.3 at 2011-12-29 23:20:14 +0100
+
+ActionController::RoutingError (No route matches [GET] "/rails/info/properties"):
+  
+
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-29 23:20:17 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-29 23:20:47 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-29 23:22:03 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/" for 91.150.187.3 at 2011-12-29 23:30:58 +0100
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+
+
+Started GET "/" for 91.150.187.3 at 2011-12-29 23:30:58 +0100
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-29 23:31:04 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 91.150.187.3 at 2011-12-30 00:29:04 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 10.0.0.111 at 2011-12-30 10:55:50 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 10.0.0.111 at 2011-12-30 10:55:51 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 10.0.0.111 at 2011-12-30 10:55:54 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 188.33.47.62 at 2011-12-30 12:37:35 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/judge.php" for 58.218.199.147 at 2011-12-30 12:43:06 +0100
+
+ActionController::RoutingError (No route matches [GET] "/judge.php"):
+  
+
+
+
+Started GET "/proxyheader.php" for 58.218.199.147 at 2011-12-31 00:29:58 +0100
+
+ActionController::RoutingError (No route matches [GET] "/proxyheader.php"):
+  
+
+
+
+Started GET "/proxyheader.php" for 58.218.199.250 at 2011-12-31 03:29:45 +0100
+
+ActionController::RoutingError (No route matches [GET] "/proxyheader.php"):
+  
+
+
+
+Started GET "/proxyheader.php" for 58.218.199.250 at 2011-12-31 06:11:37 +0100
+
+ActionController::RoutingError (No route matches [GET] "/proxyheader.php"):
+  
+
+
+
+Started GET "/proxyheader.php" for 58.218.199.147 at 2011-12-31 08:17:03 +0100
+
+ActionController::RoutingError (No route matches [GET] "/proxyheader.php"):
+  
+
+
+
+Started GET "/assets/rails.png" for 89.77.193.140 at 2011-12-31 17:41:34 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started GET "/assets/rails.png" for 89.77.193.140 at 2011-12-31 17:41:35 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+
+
+Started CONNECT "/" for 125.224.194.189 at 2012-01-01 07:07:53 +0100
+
+ActionController::RoutingError (No route matches [CONNECT] "/"):
+  
+
+
+
+Started GET "/jmx-console/HtmlAdaptor" for 61.160.201.26 at 2012-01-04 03:22:42 +0100
+
+ActionController::RoutingError (No route matches [GET] "/jmx-console/HtmlAdaptor"):
+  
+
+
+
+Started GET "/assets/rails.png" for 193.106.246.106 at 2012-01-04 11:30:36 +0100
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
