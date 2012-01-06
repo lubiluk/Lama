@@ -1,0 +1,5 @@
+class AddPointToPointMark < ActiveRecord::Migration
+  def change
+    add_column :point_marks, :point, :the_geom
+  end
+end
