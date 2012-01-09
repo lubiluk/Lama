@@ -6,11 +6,11 @@
 # Map resize
 #
 $(window).resize ->
-  $("#map_canvas").width($(window).width()-240).height($(window).height()-40);
+  $("#map_canvas").width($(window).width()-290).height($(window).height()-40);
 
 $(document).ready ->
 
-  # Fire resize event
+  # Fire resize event on load
   $(window).trigger('resize')
   
   # Initial position

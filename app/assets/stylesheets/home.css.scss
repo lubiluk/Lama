@@ -13,6 +13,11 @@ body
   margin: 20px;
 }
 
+h1
+{
+  margin-bottom: 20px;
+}
+
 #wrapper
 {
 }
@@ -26,12 +31,59 @@ body
 sidebar
 {
   display: block;
-  width: 180px; 
+  width: 230px; 
   position: absolute;
   right: 0;
   top: 0;
 }
 
+/*
+ * Warstwy
+ */
+#layers
+{
+  width: 230px;
+  border: 1px solid #ccc;
+}
+
+#layers > thead td
+{
+  background-color: #fabc26;
+}
+
+#layers > thead td
+{
+  font-weight: bold;
+}
+
+#layers > tbody tr
+{
+  cursor: pointer
+}
+
+#layers td
+{
+  padding: 0 5px; 
+  line-height: 30px;
+  height: 30px;
+}
+
+#layers .colour
+{
+  width: 20px;
+  border-radius: 10px
+}
+
+/*
+ * Menu
+ */
 #menu
 {
+  list-style-type: none;
+  margin: 20px 0
+}
+
+#menu li:before
+{
+  content: "»"
 }
