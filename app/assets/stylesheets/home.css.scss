@@ -9,7 +9,6 @@
 
 body
 {
-  position: relative;
   margin: 20px;
 }
 
@@ -30,11 +29,14 @@ h1
 
 sidebar
 {
+  background-color: rgba(246, 246, 246, 0.8);
+  border-bottom-left-radius: 5px;
   display: block;
   width: 230px; 
   position: absolute;
+  padding: 0 20px;
   right: 0;
-  top: 0;
+  top: 20px;
 }
 
 /*

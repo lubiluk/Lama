@@ -1,5 +1,6 @@
 Lama::Application.routes.draw do
   resources :point_marks
+  resources :layers
 
   get "home/index"
 
