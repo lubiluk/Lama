@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120109182928) do
+ActiveRecord::Schema.define(:version => 20120118151156) do
 
   create_table "layers", :force => true do |t|
     t.string   "name"
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120109182928) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.point    "the_geom",   :limit => nil, :srid => 4269
+    t.integer  "layer_id"
   end
 
   add_index "point_marks", ["the_geom"], :name => "index_point_marks_on_the_geom", :spatial => true
@@ -33,5 +33,15 @@ ActiveRecord::Schema.define(:version => 20120109182928) do
     t.string "description"
     t.point  "point",       :limit => nil, :srid => 4326
   end
+
+  create_table "polygon_marks", :force => true do |t|
+    t.string   "name"
+    t.integer  "layer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.polygon  "the_geom",   :limit => nil, :srid => 4269
+  end
+
+  add_index "polygon_marks", ["the_geom"], :name => "index_polygon_marks_on_the_geom", :spatial => true
 
 end
