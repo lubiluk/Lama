@@ -44,7 +44,6 @@ class LayersController < ApplicationController
 
     respond_to do |format|
       if @layer.save
-
         @layer.save!
         format.html { redirect_to @layer, :notice => 'Layer was successfully created.' }
         format.json { render :json => @layer, :status => :created, :location => @layer }

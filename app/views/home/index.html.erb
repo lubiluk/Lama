@@ -6,14 +6,17 @@
 			<table id="layers">
 				<thead>
 					<tr>
-						<td colspan="2">Warstwy
+						<td colspan="3">Warstwy</td>
 					</tr>
 				</thead>
 				<tbody>
+					<% @layers.each do |layer| %>
 					<tr>
+						<td class="visibility"><%= image_tag "eye.png" %></td>
 						<td style="background-color: red" class="colour"></td>
-						<td>Warstwa 1</td>
+						<td class="name">Warstwa #<%= layer.id %></td>
 					</tr>
+					<% end %>
 				</tbody>
 			</table>
 			<ul id="menu">

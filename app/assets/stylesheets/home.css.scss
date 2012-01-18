@@ -56,6 +56,7 @@ sidebar
 #layers > thead td
 {
   font-weight: bold;
+  padding: 5px
 }
 
 #layers > tbody tr
@@ -65,15 +66,25 @@ sidebar
 
 #layers td
 {
-  padding: 0 5px; 
-  line-height: 30px;
-  height: 30px;
+  line-height: 16px;
+  height: 16px;
 }
+
+#layers .visibility
+{
+  width: 16px;
+  padding-right: 10px;
+}
+
 
 #layers .colour
 {
-  width: 20px;
-  border-radius: 10px
+  width: 16px  
+}
+
+#layers .name
+{
+  padding-left: 10px
 }
 
 /*
