@@ -48,13 +48,11 @@ $(document).ready ->
         radius = item.radius
         geom = item.the_geom
         
-        
         switch layer_id
           when 1
             #point
-            point = geom.points[0]
-            x = point.x
-            y = point.y
+            x = geom.x
+            y = geom.y
           
             LatLng = new google.maps.LatLng(x, y);
             
@@ -70,7 +68,23 @@ $(document).ready ->
           
           when 3
             #circle
-            alert("circle")
+            #center
+            x = geom.x
+            y = geom.y
+          
+            LatLng = new google.maps.LatLng(x, y);
+            
+            circleOptions = {
+                  center : LatLng,
+                  radius: radius,
+                  map : map,
+                  strokeColor : "#0000FF",
+                  fillColor : "#0000FF"
+                }
+    
+            circle = new google.maps.Circle(circleOptions)            
+            
+            
       return
     )      
       
@@ -144,13 +158,30 @@ $(document).ready ->
       
       switch type
         when "circle"
+          x = geom.getCenter().lat()
+          y = geom.getCenter().lng()
+          wkt = "POINT(" + x + " " + y + ")"
+          data = JSON.stringify({
+            name : "json circle",
+            layer_id : 3,
+            radius : geom.getRadius(),
+            wkt : wkt
+          })
+          
+          $.ajax({
+            type : "POST",
+            url : "/geometry_marks.json",
+            data : data,
+            dataType : "json",
+            contentType: "application/json"
+          })
           geom.setEditable(false)
         when "point"
           x = geom.getPosition().lat()
           y = geom.getPosition().lng()
           wkt = "POINT(" + x + " " + y + ")"
           data = JSON.stringify({
-            name : "json test",
+            name : "json point",
             layer_id : 1,
             wkt : wkt
           })
