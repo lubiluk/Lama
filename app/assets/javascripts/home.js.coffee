@@ -9,6 +9,7 @@ $(document).ready ->
   #currently edited geometry declaration
   edited_geometry = null
   objects = new Array()
+  del_id = 0
   
   # Fire resize event on load
   $(window).trigger('resize')
@@ -29,8 +30,7 @@ $(document).ready ->
   # Load map
   map = new google.maps.Map($("#map_canvas").get(0), myOptions);
   
-  #On map view change
-  google.maps.event.addListener(map, "zoom_changed", ->
+  saveView = () ->
     x = map.getCenter().lat()
     y = map.getCenter().lng()
     zoom = map.getZoom()
@@ -48,10 +48,10 @@ $(document).ready ->
       dataType : "json",
       contentType: "application/json"
     })
-  )
-  google.maps.event.addListener(map, "dragend", ->
-    
-  )
+  
+  #On map view change
+  google.maps.event.addListener(map, "zoom_changed", saveView)
+  google.maps.event.addListener(map, "dragend", saveView)
   
   # Load map state
   $.getJSON("/map_states/1.json", (data) ->
@@ -72,7 +72,10 @@ $(document).ready ->
         radius = item.radius
         geom = item.the_geom
         
-        struct = {layer_id : layer_id}
+        struct = {
+          id : id,
+          layer_id : layer_id
+        }
         
         switch layer_id
           when 1
@@ -132,7 +135,14 @@ $(document).ready ->
             
             struct.obj = circle
 
+        #add to elements list
         objects.push(struct)
+        
+        #add click listener to all objects
+        google.maps.event.addListener(struct.obj, "click", (event) ->
+          del_id = struct.id
+          $("#delete_mode").show()
+        )
       return
     )      
       
@@ -145,6 +155,7 @@ $(document).ready ->
     edited_geometry = geometry
     $("#menu").hide()
     $("#edit_mode").show()
+    $("#delete_mode").hide()
     return
       
   # attach events
@@ -222,6 +233,25 @@ $(document).ready ->
     return
   )
   
+  #delete geometry button listener
+  $("#delete_geometry").live("click", (event) ->
+    if del_id != 0
+      $.each(objects, (key, struct) ->
+        if(struct.id == del_id)
+          
+          #delete from db
+          $.ajax({
+            type : "POST",
+            url : "/geometry_marks/" + del_id,
+            data : {_method : "delete"}
+          })
+
+          struct.obj.setMap(null)
+          del_id = 0          
+      )
+      $("#delete_mode").hide()
+  )  
+  
   # save geometry
   $("#save_geometry").live("click", (event) ->
     if edited_geometry != null
@@ -298,7 +328,7 @@ $(document).ready ->
             contentType: "application/json"
           })
           
-          
+          #clear all listeners
           google.maps.event.clearListeners(map, "click")
           geom.setEditable(false)
       
