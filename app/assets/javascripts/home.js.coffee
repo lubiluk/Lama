@@ -8,6 +8,7 @@ $(document).ready ->
   
   #currently edited geometry declaration
   edited_geometry = null
+  objects = new Array()
   
   # Fire resize event on load
   $(window).trigger('resize')
@@ -71,6 +72,8 @@ $(document).ready ->
         radius = item.radius
         geom = item.the_geom
         
+        struct = {layer_id : layer_id}
+        
         switch layer_id
           when 1
             #point
@@ -84,6 +87,8 @@ $(document).ready ->
               map : map,
               draggable : false
             });
+            
+            struct.obj = marker
           
           when 2
             #polygon
@@ -103,10 +108,10 @@ $(document).ready ->
               y = point.y
               LatLng = new google.maps.LatLng(x, y);              
               path.push(LatLng)
-             
             )
-                    
-          
+
+            struct.obj = polygon
+
           when 3
             #circle
             #center
@@ -125,7 +130,9 @@ $(document).ready ->
     
             circle = new google.maps.Circle(circleOptions)            
             
-            
+            struct.obj = circle
+
+        objects.push(struct)
       return
     )      
       
