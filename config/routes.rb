@@ -1,4 +1,6 @@
 Lama::Application.routes.draw do
+  resources :map_states
+
   resources :geometry_marks
 
   resources :polygon_marks

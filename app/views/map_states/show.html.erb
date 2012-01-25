@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>X:</b>
+  <%= @map_state.x %>
+</p>
+
+<p>
+  <b>Y:</b>
+  <%= @map_state.y %>
+</p>
+
+<p>
+  <b>Zoom:</b>
+  <%= @map_state.zoom %>
+</p>
+
+
+<%= link_to 'Edit', edit_map_state_path(@map_state) %> |
+<%= link_to 'Back', map_states_path %>

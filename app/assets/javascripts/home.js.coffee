@@ -149,17 +149,18 @@ $(document).ready ->
           x = geom.getPosition().lat()
           y = geom.getPosition().lng()
           wkt = "POINT(" + x + " " + y + ")"
-          data = {
+          data = JSON.stringify({
             name : "json test",
             layer_id : 1,
             wkt : wkt
-          }
+          })
           
           $.ajax({
             type : "POST",
             url : "/geometry_marks.json",
             data : data,
-            dataType : "json"
+            dataType : "json",
+            contentType: "application/json"
           })
           geom.setDraggable(false)
       

@@ -1,0 +1,2 @@
+module MapStatesHelper
+end

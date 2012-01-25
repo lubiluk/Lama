@@ -1,0 +1,27 @@
+<h1>Listing map_states</h1>
+
+<table>
+  <tr>
+    <th>X</th>
+    <th>Y</th>
+    <th>Zoom</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @map_states.each do |map_state| %>
+  <tr>
+    <td><%= map_state.x %></td>
+    <td><%= map_state.y %></td>
+    <td><%= map_state.zoom %></td>
+    <td><%= link_to 'Show', map_state %></td>
+    <td><%= link_to 'Edit', edit_map_state_path(map_state) %></td>
+    <td><%= link_to 'Destroy', map_state, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Map state', new_map_state_path %>
