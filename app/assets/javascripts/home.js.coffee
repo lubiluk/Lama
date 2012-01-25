@@ -312,11 +312,28 @@ $(document).ready ->
     return
   )
   
+  #display layer function
+  showLayer = (id) ->
+    $.each(objects, (key, struct) ->
+      if(struct.layer_id == id)
+        struct.obj.setMap(map)
+    )
+  
+  #hide layer function
+  hideLayer = (id) ->
+    $.each(objects, (key, struct) ->
+      if(struct.layer_id == id)
+        struct.obj.setMap(null)
+    )
+
+
+  
   $("#points-visible").live("click", (event) ->
     $("#points-invisible").show()
     $("#points-visible").hide()
   
     #make points invisible
+    hideLayer(1)
   
     return
   )
@@ -326,7 +343,8 @@ $(document).ready ->
     $("#points-invisible").hide()
   
   	#make points visible
-  
+    showLayer(1)
+    
     return
   )
   
@@ -335,6 +353,7 @@ $(document).ready ->
     $("#polygons-visible").hide()
     
     #make polygons invisible
+    hideLayer(2)
   
     return
   )
@@ -344,6 +363,7 @@ $(document).ready ->
     $("#polygons-invisible").hide()
     
     #make polygons visible
+    showLayer(2)
   
     return
   )
@@ -353,6 +373,7 @@ $(document).ready ->
     $("#circles-visible").hide()
   
   	#make circles invisible
+    hideLayer(3)
   
     return
   )
@@ -362,6 +383,7 @@ $(document).ready ->
     $("#circles-invisible").hide()
     
     #make circles visible
+    showLayer(3)
   
     return
   )
