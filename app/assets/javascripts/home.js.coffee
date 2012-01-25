@@ -312,6 +312,59 @@ $(document).ready ->
     return
   )
   
+  $("#points-visible").live("click", (event) ->
+    $("#points-invisible").show()
+    $("#points-visible").hide()
+  
+    #make points invisible
+  
+    return
+  )
+  
+  $("#points-invisible").live("click", (event) ->
+    $("#points-visible").show()
+    $("#points-invisible").hide()
+  
+  	#make points visible
+  
+    return
+  )
+  
+  $("#polygons-visible").live("click", (event) ->
+    $("#polygons-invisible").show()
+    $("#polygons-visible").hide()
+    
+    #make polygons invisible
+  
+    return
+  )
+  
+  $("#polygons-invisible").live("click", (event) ->
+    $("#polygons-visible").show()
+    $("#polygons-invisible").hide()
+    
+    #make polygons visible
+  
+    return
+  )
+  
+  $("#circles-visible").live("click", (event) ->
+    $("#circles-invisible").show()
+    $("#circles-visible").hide()
+  
+  	#make circles invisible
+  
+    return
+  )
+  
+  $("#circles-invisible").live("click", (event) ->
+    $("#circles-visible").show()
+    $("#circles-invisible").hide()
+    
+    #make circles visible
+  
+    return
+  )
   
   # do not return anything 
   return

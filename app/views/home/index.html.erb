@@ -11,17 +11,26 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td class="visibility"><%= image_tag "eye.png" %></td>
+						<td class="visibility">
+							<div id="points-visible"><%= image_tag "eye.png" %></div>
+							<div id="points-invisible"><%= image_tag "eye_hidden.png" %></div>	
+						</td>
 						<td style="background-color: red" class="colour"></td>
 						<td class="name">Punkty</td>
 					</tr>
 					<tr>
-						<td class="visibility"><%= image_tag "eye.png" %></td>
+						<td class="visibility">
+							<div id="polygons-visible"><%= image_tag "eye.png" %></div>
+							<div id="polygons-invisible"><%= image_tag "eye_hidden.png" %></div>
+						</td>
 						<td style="background-color: green" class="colour"></td>
 						<td class="name">Wielokąty</td>
 					</tr>
 					<tr>
-						<td class="visibility"><%= image_tag "eye.png" %></td>
+						<td class="visibility">
+							<div id="circles-visible"><%= image_tag "eye.png" %></div>
+							<div id="circles-invisible"><%= image_tag "eye_hidden.png" %></div>
+						</td>
 						<td style="background-color: blue" class="colour"></td>
 						<td class="name">Okręgi</td>
 					</tr>
