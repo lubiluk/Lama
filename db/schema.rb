@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120125121548) do
+ActiveRecord::Schema.define(:version => 20120125150949) do
 
   create_table "geometry_marks", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(:version => 20120125121548) do
   create_table "layers", :force => true do |t|
     t.string   "name"
     t.string   "colour"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "map_states", :force => true do |t|
+    t.float    "x"
+    t.float    "y"
+    t.float    "zoom"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

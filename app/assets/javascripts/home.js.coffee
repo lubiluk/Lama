@@ -30,11 +30,34 @@ $(document).ready ->
   
   #On map view change
   google.maps.event.addListener(map, "zoom_changed", ->
+    x = map.getCenter().lat()
+    y = map.getCenter().lng()
+    zoom = map.getZoom()
     
+    data = JSON.stringify({
+      zoom: zoom,
+      x: x,
+      y: y
+    })
+    
+    $.ajax({
+      type : "PUT",
+      url : "/map_states/1.json",
+      data : data,
+      dataType : "json",
+      contentType: "application/json"
+    })
   )
   google.maps.event.addListener(map, "dragend", ->
     
-  )  
+  )
+  
+  # Load map state
+  $.getJSON("/map_states/1.json", (data) ->
+     map.setZoom(data.zoom)
+     map.setCenter(new google.maps.LatLng(data.x, data.y))
+     return
+  )
   
   
   # Load all geometries
