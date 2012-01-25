@@ -88,7 +88,7 @@ $(document).ready ->
           when 2
             #polygon
             polygonOptions = {
-              editable : true,
+              editable : false,
               fillColor : "#00FF00",
               strokeColor : "#00FF00",
               map : map     
