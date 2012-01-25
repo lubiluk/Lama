@@ -10,20 +10,34 @@
 					</tr>
 				</thead>
 				<tbody>
-					<% @layers.each do |layer| %>
 					<tr>
 						<td class="visibility"><%= image_tag "eye.png" %></td>
 						<td style="background-color: red" class="colour"></td>
-						<td class="name">Warstwa #<%= layer.id %></td>
+						<td class="name">Punkty</td>
 					</tr>
-					<% end %>
+					<tr>
+						<td class="visibility"><%= image_tag "eye.png" %></td>
+						<td style="background-color: green" class="colour"></td>
+						<td class="name">Wielokąty</td>
+					</tr>
+					<tr>
+						<td class="visibility"><%= image_tag "eye.png" %></td>
+						<td style="background-color: blue" class="colour"></td>
+						<td class="name">Okręgi</td>
+					</tr>
+					
 				</tbody>
 			</table>
 			<ul id="menu">
-				<li>
-					<%= link_to 'Nowa warstwa', new_layer_path %>
-				</li>
+				<li><a href="#" class="add_point">Dodaj punkt</a></li>
+				<li><a href="#" class="add_polygon">Utwórz wielokąt</a></li>
+				<li><a href="#" class="add_circle">Utwórz okrąg</a></li>
 			</ul>
+			
+			<p id="edit_mode" style="display:none">
+				<button id="save_geometry">Zapisz</button>
+			</p>
+			
 		</nav>
 	</sidebar>
 	</nav>
