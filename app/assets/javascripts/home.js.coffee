@@ -64,7 +64,25 @@ $(document).ready ->
           
           when 2
             #polygon
-            alert("polygon")
+            polygonOptions = {
+              editable : true,
+              fillColor : "#00FF00",
+              strokeColor : "#00FF00",
+              map : map     
+            }
+            
+            polygon = new google.maps.Polygon(polygonOptions)
+            points = geom.rings[0].points
+            path = polygon.getPath()
+
+            $.each(points, (key, point) ->
+              x = point.x
+              y = point.y
+              LatLng = new google.maps.LatLng(x, y);              
+              path.push(LatLng)
+             
+            )
+                    
           
           when 3
             #circle
@@ -139,14 +157,39 @@ $(document).ready ->
       geom : circle
     }
     
-    enableEditMode(geometry)    
+    enableEditMode(geometry)
     
     return
   )
   
   #add polygon
   $(".add_polygon").live("click", (event) ->
+    polygonOptions = {
+      editable : true,
+      fillColor : "#00FF00",
+      strokeColor : "#00FF00",
+      map : map     
+    }
     
+    polygon = new google.maps.Polygon(polygonOptions)
+    
+    geometry = {
+      type : "polygon",
+      layer_id : 2,
+      geom : polygon
+    }
+    
+    addPoint = (event) ->
+      vertices = polygon.getPath()
+      vertices.push(event.latLng)
+      return
+    
+    google.maps.event.addListener(map, "click", addPoint)
+    
+    enableEditMode(geometry)    
+    
+    
+    return
   )
   
   # save geometry
@@ -194,8 +237,42 @@ $(document).ready ->
             contentType: "application/json"
           })
           geom.setDraggable(false)
+        when "polygon"
+        
+          wkt = "POLYGON(("
+          
+          first=true
+          path = geom.getPath().forEach((event) ->
+            lat = event.lat()
+            lng = event.lng()
+            
+            if !first
+              wkt += ", "
+            wkt += lat + " " + lng
+            
+            first=false
+          )
+                    
+          wkt +=  "))"
+          
+          data = JSON.stringify({
+            name : "json poly",
+            layer_id : 2,
+            wkt : wkt
+          })
+          $.ajax({
+            type : "POST",
+            url : "/geometry_marks.json",
+            data : data,
+            dataType : "json",
+            contentType: "application/json"
+          })
+          
+          
+          google.maps.event.clearListeners(map, "click")
+          geom.setEditable(false)
       
-      alert("saved")   
+      alert(wkt)   
       edited_geometry = null
       
       
