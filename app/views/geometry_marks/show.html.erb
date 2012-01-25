@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @geometry_mark.name %>
+</p>
+
+<p>
+  <b>Radius:</b>
+  <%= @geometry_mark.radius %>
+</p>
+
+
+<%= link_to 'Edit', edit_geometry_mark_path(@geometry_mark) %> |
+<%= link_to 'Back', geometry_marks_path %>

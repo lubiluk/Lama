@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120118151156) do
+ActiveRecord::Schema.define(:version => 20120125121548) do
+
+  create_table "geometry_marks", :force => true do |t|
+    t.string   "name"
+    t.float    "radius"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.geometry "the_geom",   :limit => nil, :srid => 4269
+    t.integer  "layer_id"
+  end
+
+  add_index "geometry_marks", ["the_geom"], :name => "index_geometry_marks_on_the_geom", :spatial => true
 
   create_table "layers", :force => true do |t|
     t.string   "name"
